@@ -61,7 +61,7 @@ Rank.prototype.value = function(type){
 
 	switch(type){
 		case 'seperate':
-			return this._ranks
+			return {data: this._sorted, rank: this._ranks}
 			break;
 		case 'merged':
 			return _.map(this._sorted, function(row, index){
