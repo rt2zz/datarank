@@ -16,25 +16,38 @@ var data = [
   ]
 
 // Examples
-Rank(data, 'value').rank().normalize().value()     // { data: (sorted data), rank: [0, .25, .5, .75, 1] }
-Rank(data, 'value').rank().value()                 // { data: (sorted data), rank: [0, 1, 2, 3, 4] }
-Rank(data, 'value').tiedRank().normalize().value() // { data: (sorted data), rank: [0, .5, .5, .5, 1] }
-Rank(data, 'value').tiedRank().value()             // { data: (sorted data), rank: [0, 2, 2, 2, 4] }
-Rank(data, 'value').tiedRank().value('merged')     // [{id: 'a', value: 1, rank: 0}, {id: 'b', value: 2, rank: 2}, ... ] 
+Rank(data, 'value').rank().normalize().value()     
+// { data: (sorted data), rank: [0, .25, .5, .75, 1] }
+
+Rank(data, 'value').rank().value()                 
+// { data: (sorted data), rank: [0, 1, 2, 3, 4] }
+
+Rank(data, 'value').tiedRank().normalize().value() 
+// { data: (sorted data), rank: [0, .5, .5, .5, 1] }
+
+Rank(data, 'value').tiedRank().value()             
+// { data: (sorted data), rank: [0, 2, 2, 2, 4] }
+
+Rank(data, 'value').tiedRank().value('merged')     
+// [{id: 'a', value: 1, rank: 0}, {id: 'b', value: 2, rank: 2}, ... ] 
 ```
 ##Usage
-*Rank(data, key, direction)*
-data: an array of objects
-key: the key to sort on
-direction (optional): -1 will invert the sort
+####Rank(data, key, [direction])
+Creates a new ranking object
+- `data` - an array of objects
+- `key` - the key to sort on
+- `direction` (optional) - -1 will invert the sort
 
-*.rank()*
-perform a simple ranking
+####.rank()
+Perform a simple ranking
 
+####.tiedRank()
+Average out rank of ties
 
-*.normalize()*
-normalize ranks from 0 to 1
+####.normalize()
+Normalize ranks from 0 to 1
 
-*.value(format)*
-format (optional): 'merged' will merge the rank into the data
-returns the ranks
+####.value([format])
+Return the ranking
+- `format` (optional) - 'merged' will add the ranking to the data rows under the rank key
+
