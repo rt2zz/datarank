@@ -1,17 +1,28 @@
 {
   "name": "datarank",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "datarank ========",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/lab"
+    "test": "lab"
   },
   "author": "Zack Story <zstory@ucla.edu>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "lodash": "~2.4.1"
   },
   "devDependencies": {
     "lab": "~3.2.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rt2zz/datarank.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rt2zz/datarank/issues"
+  },
+  "homepage": "https://github.com/rt2zz/datarank"
 }
